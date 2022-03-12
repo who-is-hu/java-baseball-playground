@@ -30,4 +30,15 @@ class RefereeTest {
         assertThat(judgement.get(Type.BALL)).isEqualTo(0);
         assertThat(judgement.get(Type.MISS)).isEqualTo(1);
     }
+
+    @Test
+    void oneStrikeTwoBall() {
+        ArrayList<Integer> input = new ArrayList<>(Arrays.asList(1, 2, 3));
+        ArrayList<Integer> answer = new ArrayList<>(Arrays.asList(1, 3, 2));
+
+        HashMap<Type, Integer> judgement = referee.judge(answer, input);
+        assertThat(judgement.get(Type.STRIKE)).isEqualTo(1);
+        assertThat(judgement.get(Type.BALL)).isEqualTo(2);
+        assertThat(judgement.get(Type.MISS)).isEqualTo(0);
+    }
 }
