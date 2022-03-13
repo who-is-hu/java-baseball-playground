@@ -11,10 +11,10 @@ public class Ball {
     }
 
     public BallStatus compare(Ball ball) {
-        if(this.equals(ball)) {
+        if (this.equals(ball)) {
             return BallStatus.STRIKE;
         }
-        if(this.isMatchBall(ball)) {
+        if (this.isMatchBall(ball)) {
             return BallStatus.BALL;
         }
         return BallStatus.MISS;

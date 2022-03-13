@@ -1,6 +1,4 @@
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
@@ -31,7 +29,7 @@ public class Main {
             judgement = randomAnswer.compare(im.inputAnswer());
             OutputManager.showInningResult(judgement);
             trial++;
-        } while(!judgement.isGameEnd());
+        } while (!judgement.isGameEnd());
 
         System.out.println(trial + "회에 성공!");
     }

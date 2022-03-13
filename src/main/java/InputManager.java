@@ -13,7 +13,7 @@ public class InputManager {
         StringTokenizer tokens = new StringTokenizer(input, " ");
 
         ArrayList<Integer> answer = new ArrayList<>();
-        while(tokens.hasMoreTokens()){
+        while (tokens.hasMoreTokens()) {
             answer.add(Integer.parseInt(tokens.nextToken()));
         }
         return new Balls(answer);

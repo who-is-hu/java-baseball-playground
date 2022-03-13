@@ -1,9 +1,7 @@
-import java.util.HashMap;
-
 public class OutputManager {
 
     public static void showInningResult(Judgement judgement) {
-        if(judgement.isMiss()) {
+        if (judgement.isMiss()) {
             System.out.println("miss");
             return;
         }
