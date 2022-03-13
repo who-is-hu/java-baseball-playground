@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Balls {
 
-    private static final int MAX_LENGTH = 3;
+    public static final int MAX_LENGTH = 3;
     private final ArrayList<Ball> balls;
 
     public Balls(List<Integer> ballNumbers) {
@@ -24,5 +24,12 @@ public class Balls {
                 .filter(BallStatus::isNotMiss)
                 .findFirst()
                 .orElse(BallStatus.MISS);
+    }
+
+    public Judgement compare(Balls balls) {
+        Judgement judgement = new Judgement();
+        this.balls.stream()
+                .forEach(ball -> judgement.report(balls.compare(ball)));
+        return judgement;
     }
 }
