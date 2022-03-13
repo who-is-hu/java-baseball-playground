@@ -6,7 +6,8 @@ import java.util.HashSet;
 import static org.assertj.core.api.Assertions.assertThat;
 
 
-class AnswerTest {
+// 랜덤이라 크게 의미없는 듯..
+class AnswerGeneratorTest {
 
     @Test
     void 랜덤정답생성테스트(){
