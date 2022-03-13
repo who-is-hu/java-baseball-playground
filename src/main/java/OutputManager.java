@@ -2,11 +2,11 @@ import java.util.HashMap;
 
 public class OutputManager {
 
-    public static void showInningResult(HashMap<BallStatus, Integer> judgement) {
-        if(judgement.get(BallStatus.MISS) == AnswerGenerator.ANSWER_DIGIT) {
+    public static void showInningResult(Judgement judgement) {
+        if(judgement.isMiss()) {
             System.out.println("miss");
             return;
         }
-        System.out.printf("%d strike %d ball\n", judgement.get(BallStatus.STRIKE), judgement.get(BallStatus.BALL));
+        System.out.printf("%d strike %d ball\n", judgement.getNumStrike(), judgement.getNumBall());
     }
 }

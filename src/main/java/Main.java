@@ -23,20 +23,15 @@ public class Main {
     }
 
     public static void playGame() throws IOException {
-        boolean playNextInning;
-        Referee referee = new Referee();
         int trial = 0;
-        ArrayList<Integer> randomAnswer = AnswerGenerator.createRandomAnswer();
+        Judgement judgement;
+        Balls randomAnswer = new Balls(AnswerGenerator.createRandomAnswer());
 
         do {
-            ArrayList<Integer> input = im.inputAnswer();
-
-            HashMap<BallStatus, Integer> judgement = referee.judge(randomAnswer, input);
+            judgement = randomAnswer.compare(im.inputAnswer());
             OutputManager.showInningResult(judgement);
-
-            playNextInning = !isPlayerWin(judgement);
             trial++;
-        } while(playNextInning);
+        } while(!judgement.isGameEnd());
 
         System.out.println(trial + "회에 성공!");
     }
@@ -45,9 +40,5 @@ public class Main {
         System.out.println("do you want to continue game? (y/n)");
         String input = sc.nextLine();
         return input.equals("y");
-    }
-
-    private static boolean isPlayerWin(HashMap<BallStatus, Integer> judgement) {
-        return judgement.get(BallStatus.STRIKE) == AnswerGenerator.ANSWER_DIGIT;
     }
 }

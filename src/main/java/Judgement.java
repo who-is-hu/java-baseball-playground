@@ -23,4 +23,8 @@ public class Judgement {
     public boolean isGameEnd() {
         return strike == Balls.MAX_LENGTH;
     }
+
+    public boolean isMiss() {
+        return strike == 0 && ball == 0;
+    }
 }
