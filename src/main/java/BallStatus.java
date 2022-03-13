@@ -1,4 +1,5 @@
-public enum BallStatus {
+public enum Type {
     STRIKE,
-    BALL, MISS,
+    BALL,
+    MISS
 }

@@ -14,10 +14,10 @@ class RefereeTest {
         ArrayList<Integer> input = new ArrayList<>(Arrays.asList(1, 2, 3));
         ArrayList<Integer> answer = new ArrayList<>(Arrays.asList(1, 2, 3));
 
-        HashMap<Type, Integer> judgement = referee.judge(answer, input);
-        assertThat(judgement.get(Type.STRIKE)).isEqualTo(3);
-        assertThat(judgement.get(Type.BALL)).isEqualTo(0);
-        assertThat(judgement.get(Type.MISS)).isEqualTo(0);
+        HashMap<BallStatus, Integer> judgement = referee.judge(answer, input);
+        assertThat(judgement.get(BallStatus.STRIKE)).isEqualTo(3);
+        assertThat(judgement.get(BallStatus.BALL)).isEqualTo(0);
+        assertThat(judgement.get(BallStatus.MISS)).isEqualTo(0);
     }
 
     @Test
@@ -25,10 +25,10 @@ class RefereeTest {
         ArrayList<Integer> input = new ArrayList<>(Arrays.asList(1, 2, 3));
         ArrayList<Integer> answer = new ArrayList<>(Arrays.asList(1, 2, 9));
 
-        HashMap<Type, Integer> judgement = referee.judge(answer, input);
-        assertThat(judgement.get(Type.STRIKE)).isEqualTo(2);
-        assertThat(judgement.get(Type.BALL)).isEqualTo(0);
-        assertThat(judgement.get(Type.MISS)).isEqualTo(1);
+        HashMap<BallStatus, Integer> judgement = referee.judge(answer, input);
+        assertThat(judgement.get(BallStatus.STRIKE)).isEqualTo(2);
+        assertThat(judgement.get(BallStatus.BALL)).isEqualTo(0);
+        assertThat(judgement.get(BallStatus.MISS)).isEqualTo(1);
     }
 
     @Test
@@ -36,9 +36,9 @@ class RefereeTest {
         ArrayList<Integer> input = new ArrayList<>(Arrays.asList(1, 2, 3));
         ArrayList<Integer> answer = new ArrayList<>(Arrays.asList(1, 3, 2));
 
-        HashMap<Type, Integer> judgement = referee.judge(answer, input);
-        assertThat(judgement.get(Type.STRIKE)).isEqualTo(1);
-        assertThat(judgement.get(Type.BALL)).isEqualTo(2);
-        assertThat(judgement.get(Type.MISS)).isEqualTo(0);
+        HashMap<BallStatus, Integer> judgement = referee.judge(answer, input);
+        assertThat(judgement.get(BallStatus.STRIKE)).isEqualTo(1);
+        assertThat(judgement.get(BallStatus.BALL)).isEqualTo(2);
+        assertThat(judgement.get(BallStatus.MISS)).isEqualTo(0);
     }
 }

@@ -31,7 +31,7 @@ public class Main {
         do {
             ArrayList<Integer> input = im.inputAnswer();
 
-            HashMap<Type, Integer> judgement = referee.judge(randomAnswer, input);
+            HashMap<BallStatus, Integer> judgement = referee.judge(randomAnswer, input);
             OutputManager.showInningResult(judgement);
 
             playNextInning = !isPlayerWin(judgement);
@@ -47,7 +47,7 @@ public class Main {
         return input.equals("y");
     }
 
-    private static boolean isPlayerWin(HashMap<Type, Integer> judgement) {
-        return judgement.get(Type.STRIKE) == AnswerGenerator.ANSWER_DIGIT;
+    private static boolean isPlayerWin(HashMap<BallStatus, Integer> judgement) {
+        return judgement.get(BallStatus.STRIKE) == AnswerGenerator.ANSWER_DIGIT;
     }
 }
