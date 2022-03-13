@@ -1,5 +1,9 @@
-public enum Type {
+public enum BallStatus {
     STRIKE,
     BALL,
-    MISS
+    MISS;
+
+    public boolean isNotMiss(){
+        return this != MISS;
+    }
 }
